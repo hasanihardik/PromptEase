@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Configure API Key</title>
   <style>
@@ -7,11 +8,15 @@
       font-family: Arial, sans-serif;
       margin: 20px;
     }
+
     input {
-      width: 100%;
-      padding: 8px;
+      width: 150%;
+      /* Increase width by 1.5 times */
+      padding: 12px;
+      /* Increase padding to increase height */
       margin: 10px 0;
     }
+
     button {
       width: 100%;
       padding: 10px;
@@ -21,18 +26,22 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
-  <h2>Configure Gemini API Key</h2>
-  <input type="text" id="apiKeyInput" placeholder="Enter your Gemini API key here">
+   <h2>Configure Gemini API Key</h2>
+   <input type="text" id="apiKeyInput" placeholder="Enter your Gemini API key here">
   <button id="saveKeyBtn">Save API Key</button>
 
-  <p id="statusMessage" style="color: green;"></p>
+   <p id="statusMessage" style="color: green;"></p>
 
+  
   <script src="popup.js"></script>
 </body>
+
 </html>
