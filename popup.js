@@ -15,4 +15,3 @@ document.getElementById('saveKeyBtn').addEventListener('click', function () {
       document.getElementById('statusMessage').textContent = 'Please enter a valid API key.';
     }
   });
-  
