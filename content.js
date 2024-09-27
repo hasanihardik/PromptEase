@@ -2,21 +2,24 @@
 const style = document.createElement("style");
 style.textContent = `
   .result {
-    position: absolute;
-    max-width: 300px;
+    position: fixed; /* Change to fixed for centering */
+    max-width: 500px; /* Increase width */
     height: auto;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px; /* Increased padding for better layout */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 10000;
     font-family: 'Courier New', monospace; /* Change font to a monospaced font for code */
-    font-size: 14px;
+    font-size: 16px; /* Increase font size */
     line-height: 1.4;
     color: black;
     white-space: pre-wrap; /* Preserve whitespace and line breaks */
     overflow-wrap: break-word; /* Break long words */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Centering adjustment */
   }
   .result-close {
     position: absolute;
@@ -26,10 +29,20 @@ style.textContent = `
     font-size: 20px;
     color: black;
   }
+  .copy-button {
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+  }
 `;
 document.head.appendChild(style);
 
-// Show the result near the selected text
+// Show the result in a fixed position at the center of the page
 function showFloatingResult(text) {
   // Remove previous result
   const existingResult = document.querySelector(".result");
@@ -42,37 +55,30 @@ function showFloatingResult(text) {
   resultDiv.innerHTML = `
     <div class="result-close">&times;</div>
     <pre>${text}</pre> <!-- Use <pre> to maintain formatting -->
+    <button class="copy-button">Copy to Clipboard</button>
   `;
-
-  // Get selected text and position
-  const selection = window.getSelection();
-  const range = selection.getRangeAt(0);
-  const rect = range.getBoundingClientRect();
-
-  // Position the output near the selected text
-  resultDiv.style.left = `${rect.left + window.scrollX}px`;
-  resultDiv.style.top = `${rect.bottom + window.scrollY + 10}px`;
 
   document.body.appendChild(resultDiv);
 
-  // Adjust position if the output goes off-screen
-  const divRect = resultDiv.getBoundingClientRect();
-  if (divRect.right > window.innerWidth) {
-    resultDiv.style.left = `${window.innerWidth - divRect.width - 10}px`;
-  }
-  if (divRect.bottom > window.innerHeight) {
-    resultDiv.style.top = `${rect.top + window.scrollY - divRect.height - 10}px`;
-  }
+  // Copy text to clipboard functionality
+  const copyButton = resultDiv.querySelector(".copy-button");
+  copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Text copied to clipboard!");
+    }).catch(err => {
+      console.error("Failed to copy text: ", err);
+    });
+  });
 
   const closeButton = resultDiv.querySelector(".result-close");
   closeButton.addEventListener("click", () => {
     resultDiv.remove();
   });
 
-  // Automatically remove the div after 10 seconds
+  // Automatically remove the div after 20 seconds
   setTimeout(() => {
     resultDiv.remove();
-  }, 10000);
+  }, 20000);
 }
 
 // Listen for messages from background.js

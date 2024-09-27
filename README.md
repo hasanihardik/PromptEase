@@ -11,6 +11,9 @@ A chrome extension to get ai based response for selected text in any webpage.
 6) add that api key in popup box (it will appear after clicking the extension icon)
 7) you are good to go... select any question/program, right click and click on PromptEase, within seconds you'll have your output on screen... 
 
+
+
+
 # Future Upgrades
 
 1) fix the popup key box (will be done soon)
@@ -20,4 +23,21 @@ A chrome extension to get ai based response for selected text in any webpage.
 
 # Screenshots
 
-will be added .
+Enable Developer Mode
+![DeveloperMode](image-1.png)
+
+Select on Load Unpacked
+![load](image-2.png)
+
+Locate and selected the Repository folder to add the extension to chrome
+![folder](image-3.png)
+
+Adding API Key
+![api-key](image.png)
+
+Select text and right click 
+![text](image-5.png)
+
+Output will appear like this on screen
+![output](image-4.png)
+
