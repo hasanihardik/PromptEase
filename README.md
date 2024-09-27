@@ -1,5 +1,11 @@
 # PromptEase
-A chrome extension to get ai based response for selected text in any webpage.
+A chrome extension to get ai based response for selected text in any webpage. Works in IAmNeo Examly. 
+
+# Features
+
+1) solve any programs with just a click ...(it gets copied into your clipboard)
+2) solve any MCQs in just 1 click
+3) custom copy paste functionality
 
 # Installation:
 
@@ -14,10 +20,9 @@ A chrome extension to get ai based response for selected text in any webpage.
 
 # Future Upgrades
 
-1) fix the popup key box (will be done soon)
-2) add MCQ Solver functionality to quickly solve MCQs across platforms
-3) fix the output box...
-4) expand it to GPT 3.5 mini, GPT 4, Claude etc
+1) expand it to GPT 3.5 mini, GPT 4, Claude etc
+2) adding panic mode which will delete the extension when certain key combination is pressed..
+3) will ensure the extension does not get detected by certain websites like NeoPortal / Examly .
 
 # Screenshots
 
