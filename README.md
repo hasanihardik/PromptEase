@@ -12,8 +12,6 @@ A chrome extension to get ai based response for selected text in any webpage.
 7) you are good to go... select any question/program, right click and click on PromptEase, within seconds you'll have your output on screen... 
 
 
-
-
 # Future Upgrades
 
 1) fix the popup key box (will be done soon)
