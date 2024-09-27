@@ -3,7 +3,12 @@
     "name": "PromptEase",
     "version": "1.0",
     "description": "PromptEase streamlines your browsing experience by offering Gemini-AI-generated responses directly on the web page through a sleek, minimal overlay. Simply highlight text on any webpage, right-click to choose 'PromptEase', and instantly view AI-generated insights in an elegant, unobtrusive manner.",
-    "permissions": ["contextMenus", "scripting", "storage"],  
+    "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting",
+    "storage"
+], 
     "host_permissions": ["<all_urls>"],
     "background": {
       "service_worker": "background.js"
@@ -20,8 +25,8 @@
       "128": "icon.png"
     },
     "action": {
-      "default_title": "PromptEase",
-      "default_popup": "popup.html"  
+      "default_popup": "popup.html",
+      "default_title": "PromptEase"
     }
   }
   
