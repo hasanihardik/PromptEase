@@ -61,7 +61,7 @@ chrome.runtime.onInstalled.addListener(() => {
         contents: [
           {
             role: "user",
-            parts: [{ text: `Explain: ${text} in one sentence` }],
+            parts: [{ text: `Just give the program: ${text}. No comments, no explanation.` }],
           },
         ],
       }),
@@ -77,4 +77,5 @@ chrome.runtime.onInstalled.addListener(() => {
     const data = await response.json();
     return data.candidates[0].content.parts[0].text;
   }
+  
   
