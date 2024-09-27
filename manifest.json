@@ -24,9 +24,34 @@
       "48": "icon.png",
       "128": "icon.png"
     },
+    "commands": {
+      "solve_program": {
+        "suggested_key": {
+          "default": "alt+P"
+        },
+        "description": "Solve Program"
+      },
+      "solve_mcq": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+M"
+        },
+        "description": "alt+M"
+      },
+      "custom_copy": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+C"
+        },
+        "description": "Custom Copy"
+      },
+      "custom_paste": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+V"
+        },
+        "description": "Custom Paste"
+      }
+    },
     "action": {
       "default_popup": "popup.html",
       "default_title": "PromptEase"
     }
   }
-  

@@ -23,9 +23,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Show the result in a fixed position at the center of the page
 function showFloatingResult(text, isMCQ = false) {
-  // Remove previous result
   const existingResult = document.querySelector(".result");
   if (existingResult) {
     existingResult.remove();
@@ -36,7 +34,6 @@ function showFloatingResult(text, isMCQ = false) {
   resultDiv.textContent = text;
   
   document.body.appendChild(resultDiv);
-
   if (!isMCQ) {
     navigator.clipboard.writeText(text).then(() => {
       console.log("Text copied to clipboard");
@@ -57,5 +54,17 @@ function showFloatingResult(text, isMCQ = false) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "showAlert") {
     showFloatingResult(request.text, request.isMCQ);
+  } else if (request.action === "getSelectedText") {
+    sendResponse({ selectedText: window.getSelection().toString() });
+  } else if (request.action === "customPaste") {
+    const activeElement = document.activeElement;
+    if (activeElement.tagName === 'TEXTAREA' || activeElement.tagName === 'INPUT') {
+      const start = activeElement.selectionStart;
+      const end = activeElement.selectionEnd;
+      activeElement.value = activeElement.value.substring(0, start) + request.text + activeElement.value.substring(end);
+      activeElement.selectionStart = activeElement.selectionEnd = start + request.text.length;
+    } else if (activeElement.isContentEditable) {
+      document.execCommand('insertText', false, request.text);
+    }
   }
 });
