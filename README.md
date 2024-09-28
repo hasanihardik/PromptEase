@@ -1,5 +1,5 @@
 # PromptEase
-A chrome extension to get ai based response for selected text in any webpage. Works in IAmNeo Examly. DOESN'T WORK WITH SQL QUERIES FOR NOW(WILL FIX IT ASAP).
+A chrome extension to get ai based response for selected text in any webpage. Works in IAmNeo Examly. CURRENTLY NOT WORKING WITH SQL QUERIES (WILL FIX IT ASAP).
 
 # Features
 
