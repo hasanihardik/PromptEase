@@ -27,7 +27,7 @@
     "commands": {
       "solve_program": {
         "suggested_key": {
-          "default": "alt+P"
+          "default": "Ctrl+P"
         },
         "description": "Solve Program"
       },
@@ -35,7 +35,7 @@
         "suggested_key": {
           "default": "Ctrl+Shift+M"
         },
-        "description": "alt+M"
+        "description": "Solve MCQ"
       },
       "custom_copy": {
         "suggested_key": {
