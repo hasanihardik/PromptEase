@@ -5,7 +5,7 @@ A chrome extension to get ai based response for selected text in any webpage. Wo
 
 1) solve any programs with just a click ...(it gets copied into your clipboard)
 2) solve any MCQs in just 1 click
-3) custom copy paste functionality
+3) custom copy paste functionality..
 
 # Installation:
 
