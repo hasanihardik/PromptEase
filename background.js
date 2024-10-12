@@ -78,7 +78,7 @@ async function generateResponse(text, apiKey, isMCQ) {
   const url = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
   const prompt = isMCQ
     ? `For the following MCQ, provide correct answer : ${text}`
-    : `Just give the program: ${text}. No comments, no explanation.`;
+    : `Just give the Java program: ${text}. No comments, no explanation.`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
